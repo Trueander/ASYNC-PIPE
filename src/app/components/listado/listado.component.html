@@ -1,0 +1,45 @@
+
+<!-- <div class="container">
+    <ng-container *ngIf="!cargandoPeticion else loading">
+        <div class="card" *ngFor="let producto of productos">
+            <div class="info">
+                <h3>{{producto.nombre}}</h3>
+                <img [src]="producto.imagenUrl" alt="">
+                <p>{{producto.descripcion}}</p>
+            </div>
+            <div class="precio">
+                <h4>{{producto.precio | currency: 'S/. '}}</h4>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-template #loading>Cargando productos.....</ng-template>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <ng-container *ngIf="productos$ | async as productos else loading">
+        <div class="card" *ngFor="let producto of productos">
+            <div class="info">
+                <h3>{{producto.nombre}}</h3>
+                <img [src]="producto.imagenUrl" alt="">
+                <p>{{producto.descripcion}}</p>
+            </div>
+            <div class="precio">
+                <h4>{{producto.precio | currency: 'S/. '}}</h4>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-template #loading>Cargando productos.....</ng-template>
+</div>
+
